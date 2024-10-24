@@ -1,0 +1,20 @@
+service: serverless-lambda-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-southeast-1
+  environment:
+    DB_HOST: ${ssm:/mydb/db-host}
+    DB_USER: ${ssm:/mydb/db-user}   # `~true` is for secure string (decryption)
+    DB_PASSWORD: ${ssm:/mydb/db-password}
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: hello
+          method: get
+
+

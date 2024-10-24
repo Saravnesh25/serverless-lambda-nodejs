@@ -1,0 +1,101 @@
+{
+  "C:\\Users\\user\\serverless-lambda-nodejs": {
+    "versionSfCore": null,
+    "versionFramework": "4.4.7",
+    "isWithinCompose": false,
+    "isCompose": false,
+    "composeOrgName": null,
+    "composeResolverProviders": {
+      "default-aws-credential-resolver": "<REDACTED>"
+    },
+    "composeServiceName": null,
+    "servicePath": "C:\\Users\\user\\serverless-lambda-nodejs",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "serverless-lambda-nodejs",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs18.x",
+        "region": "ap-southeast-1",
+        "environment": {
+          "DB_HOST": "mydb.cf8qsgowciv6.ap-southeast-1.rds.amazonaws.com",
+          "DB_USER": "admin",
+          "DB_PASSWORD": "<REDACTED>"
+        },
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "functions": {
+        "hello": {
+          "handler": "handler.hello",
+          "events": [
+            {
+              "http": {
+                "path": "hello",
+                "method": "get"
+              }
+            }
+          ],
+          "name": "serverless-lambda-nodejs-dev-hello"
+        }
+      }
+    },
+    "serviceRawFile": "service: serverless-lambda-nodejs\r\n\r\nprovider:\r\n  name: aws\r\n  runtime: nodejs18.x\r\n  region: ap-southeast-1\r\n  environment:\r\n    DB_HOST: ${ssm:/mydb/db-host}\r\n    DB_USER: ${ssm:/mydb/db-user}   # `~true` is for secure string (decryption)\r\n    DB_PASSWORD: ${ssm:/mydb/db-password}\r\n\r\nfunctions:\r\n  hello:\r\n    handler: handler.hello\r\n    events:\r\n      - http:\r\n          path: hello\r\n          method: get\r\n\r\n\r\n",
+    "command": [
+      "remove"
+    ],
+    "options": {},
+    "error": null,
+    "params": {},
+    "machineId": "3f7cd4d9314bad25d1e80c5b59a131cb",
+    "stage": "dev",
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "815d666a-f373-49cf-ba2f-d962f6d05a06",
+    "orgName": "saravnesh",
+    "userId": "3ZPSWWbJQ2mD1KC2jx",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "saravnesh",
+    "subscription": null,
+    "userEmail": "saravnesh@gmail.com",
+    "serviceProviderAwsRegion": "ap-southeast-1",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "764260617125",
+    "projectType": "traditional",
+    "versionSf": "4.4.7",
+    "serviceProviderAwsCfStackName": "serverless-lambda-nodejs-dev",
+    "serviceUniqueId": "arn:aws:cloudformation:ap-southeast-1:764260617125:stack/serverless-lambda-nodejs-dev/74e68c10-9059-11ef-855c-06e3559d509f",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:ap-southeast-1:764260617125:stack/serverless-lambda-nodejs-dev/74e68c10-9059-11ef-855c-06e3559d509f",
+    "serviceProviderAwsCfStackCreated": "2024-10-22T09:38:56.022Z",
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": "CREATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "HelloLambdaFunctionQualifiedArn",
+        "OutputValue": "arn:aws:lambda:ap-southeast-1:764260617125:function:serverless-lambda-nodejs-dev-hello:1",
+        "Description": "Current Lambda function version",
+        "ExportName": "sls-serverless-lambda-nodejs-dev-HelloLambdaFunctionQualifiedArn"
+      },
+      {
+        "OutputKey": "ServiceEndpoint",
+        "OutputValue": "https://ejkff7ebb3.execute-api.ap-southeast-1.amazonaws.com/dev",
+        "Description": "URL of the service endpoint",
+        "ExportName": "sls-serverless-lambda-nodejs-dev-ServiceEndpoint"
+      },
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "serverless-framework-deployments-ap-southeast-1-cffff9b2-ef66",
+        "ExportName": "sls-serverless-lambda-nodejs-dev-ServerlessDeploymentBucketName"
+      }
+    ],
+    "integrations": {}
+  }
+}
