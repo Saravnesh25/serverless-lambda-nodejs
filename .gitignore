@@ -1,0 +1,29 @@
+# Node.js dependencies
+node_modules/
+
+# Serverless Framework artifacts
+.serverless/
+
+# Environment variables
+.env
+
+# Package lock file (optional)
+package-lock.json
+
+# AWS credentials files
+*.pem
+
+# Ignore logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+debug.log
+
+# Ignore any local IDE configurations
+.vscode/
+.idea/
+*.swp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
